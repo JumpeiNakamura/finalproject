@@ -2,6 +2,11 @@ Blog::Application.routes.draw do
 
 
 
+  resources :locations
+
+  resources :people
+
+  get "googlemap/result"
 #Amazon API
   get "/amazon/index" => "amazon#index"
   # get "amazon/show" => "amazon#show"
@@ -40,7 +45,8 @@ Blog::Application.routes.draw do
 
   get "/about/index" => "about#index"
 
-  get "/googlemap/location" => "googlemap#location"
+  get "/googlemaps/location" => "googlemaps#location"
+  get "/googlemaps/result" => "googlemaps#result"
 
   get "/reviews/create" => "reviews#create"
 
@@ -48,7 +54,7 @@ Blog::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'locations#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
