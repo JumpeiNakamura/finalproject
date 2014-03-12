@@ -4,28 +4,28 @@
 
 <% user = User.find_by(:id => params[:user_id]) %>
 
-<form action="/users/update" class="col-md-3">
+<form action="/users/<%= user.id %>/update" class="col-md-3">
 
 <label class="control-label">
   <div class="form-group">
     <label>Edit your First Name:</label>
-    <input name="first_name" type="text" class="form-control input-sm" placeholder="user.first_name">
+    <input name="first_name" type="text" class="form-control input-sm" value="<%= user.first_name %>">
   </div>
   <div class="form-group">
     <label>Edit your Last Name:</label>
-    <input name="last_name" type="text" class="form-control input-sm" placeholder="Last name...">
+    <input name="last_name" type="text" class="form-control input-sm" value="<%= user.last_name %>">
   </div>
   <div class="form-group">
     <label>Edit your email address:</label>
-    <input name="email" type="text" class="form-control input-sm" placeholder="Email address...">
+    <input name="email" type="text" class="form-control input-sm" value="<%= user.email %>">
   </div>
   <div class="form-group">
     <label>Edit a Password:</label>
-    <input name="password" type="text" class="form-control input-sm" placeholder="Set a secure password">
+    <input name="password" type="text" class="form-control input-sm" value="<%= user.password %>">
   </div>
   <div class="form-group">
     <label>Edit your zipcode to find the nearest deals:</label>
-    <input name="zipcode" type="integer" class="form-control input-sm" placeholder="Zipcode...">
+    <input name="zipcode" type="integer" class="form-control input-sm" value="<%= user.zipcode %>">
   </div>
   <div class="form-group">
     <label>Choose your prefered category to find hotdeals:</label>

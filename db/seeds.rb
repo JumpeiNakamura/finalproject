@@ -145,7 +145,7 @@ deal_list = [       { :name => "Google Nexus 7 Tablet (7-Inch, 32GB, Black) by A
                       :deal_price => 239,
                       :product_id => 2,
                       :category_id => 1,
-                      :image_url => 'http://ecx.images-amazon.com/images/I/31rWhdb1fXL.jpg',
+                      :image_url => 'http://cdn.androidcommunity.com/wp-content/uploads/2013/09/KindleFireHDX89Vertical-796x1024.jpg',
                       :description => "World sharpest 7 tablet screen (323 ppi). Powerful battery, up to 9 hrs of active use. Quad-core speed and performance, 2GB RAMs with Android 4.3.",
                       :link => "http://google.com"
                     },
@@ -263,3 +263,32 @@ review = [       { :title => "Amazing!",
   end
 
 puts "There are now #{Review.count} reviews in the catalog."
+
+
+Location.destroy_all
+
+location = [     { :latitude => 42.054155,
+                   :longitude => -87.676685,
+                   :address => "Kellogg School of Management",
+                   :description => "Best School!" ,
+                   :title => "Kellogg",
+                },
+                 { :latitude => 42.021090,
+                   :longitude => -87.706906,
+                   :address => "Best Buy",
+                   :description => "Best Buy" ,
+                   :title => "Best Buy",
+                } ]
+
+  location.each do |location|
+   l = Location.new
+   l.latitude = location[:latitude]
+   l.longitude = location[:longitude]
+   l.address = location[:address]
+   l.description = location[:description]
+   l.title = location[:title]
+   l.save
+  end
+
+puts "There are now #{Location.count} locations in the catalog."
+

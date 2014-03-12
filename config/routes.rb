@@ -19,8 +19,8 @@ Blog::Application.routes.draw do
   get "/users/new" => "users#new"
   get "/users/create" => "users#create"
   get "/users/show" => "users#show"
-  get "/users/edit" => "users#edit"
-  get "/users/:user_id/updateshow" => "users#update"
+  get "/users/:user_id/edit" => "users#edit"
+  get "/users/:user_id/update" => "users#update"
 
 #Deals
   get "/deals/index" => "deals#index"

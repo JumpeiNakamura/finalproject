@@ -23,7 +23,7 @@
 </div>
 
 <% @deal_list.each do |deal| %>
-
+<% avg_rating = Review.where(:deal_id => deal.id).average(:rating) %>
   <div class="row">
 
     <div class="col-md-1">
@@ -35,6 +35,7 @@
     <div class="col-md-6">
       <h5>
         <a href="/deals/<%= deal.id %>/show"><%= deal.name %></a>
+
       </h5>
 
       <p><h6><span class="original_price">$<%= deal.original_price %></span>
@@ -48,7 +49,8 @@
 
      <div class="col-md-2">
       <h6>
-      <p>aaaaaaaaaaaaaa</p></h6>
+      <%= avg_rating %>
+      </h6>
      </div>
 
 </div>
