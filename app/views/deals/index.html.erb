@@ -6,9 +6,9 @@
 <h3>Latest hotdeals</h3>
 </div>
 
+<div class="row container">
 <% @deal_list.each do |deal| %>
-  <div class="row container">
-    <div class="col-md-4" style="height:200px">
+     <div class="col-md-4" style="height:220px">
       <h4><a href="/deals/<%= deal.id %>/show"><%= deal.name %></a></h4>
       <div class="col-md-3">
         <h5><img src="<%= deal.image_url %>" width="60"></h5>
@@ -17,7 +17,7 @@
         <p><span class="deal_price">$<%= deal.deal_price %></span></p>
 
         <button type="button"  "pull-right" class="btn btn-info">
-          <%= link_to "Show details", "/deals/#{deal.link}" %>
+          <%= link_to "Go to Deal", "#{deal.link}" %>
         </button>
       </div>
       <div class="col-md-9">
@@ -52,5 +52,4 @@
     </div>
 <% end %>
   </div>
-
 

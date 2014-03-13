@@ -1,21 +1,31 @@
 <div class="page-header">
   <%= link_to "Edit", "/deals/#{@deal.id}/edit", :class => "btn btn-md btn-success pull-right" %>
-  <h1>Deal Details</h1>
+  <h3>Deal Details</h3>
 </div>
 
 <div class="row">
   <div class="col-md-3">
     <img class="col-md-12" src="<%= @deal.image_url %>">
+    <div class="main">
+    <%= link_to "Go to Deal", "#{@deal.link}", :class => "btn btn-md btn-info"%>
+    aaaaa
+    </div>
   </div>
   <div class="col-md-8">
     <h3><%= @deal.name %></h3>
-    <p><span>Original Price: <%= number_to_currency(@deal.original_price) %></span></p>
-    <p class="lead">Current Price:<%= number_to_currency(@deal.deal_price) %></p>
+    <p>Original Price: <%= number_to_currency(@deal.original_price) %></p>
+    <p class="lead">Deal Price:<%= number_to_currency(@deal.deal_price) %></p>
+  <br>
+    <h4>Fine print:</h4>
     <p><%= @deal.description %></p>
   </div>
 </div>
 
-<h2>Customer Reviews</h2>
+<br>
+
+<div class="page-header">
+<h3>Customer Reviews</h3>
+</div>
 
 <div class="row">
   <div class="col-md-6">
