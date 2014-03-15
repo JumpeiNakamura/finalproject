@@ -29,7 +29,7 @@ Blog::Application.routes.draw do
   #READ
   get "/" =>"deals#index"
   get "/deals/index" =>"deals#index"
-  get "/deals/" => "deals#category_list"
+  get "/deals" => "deals#category_list"
   get "/deals/:deal_id/show" => "deals#show"
 
   #UPDATE
