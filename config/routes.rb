@@ -22,17 +22,14 @@ Blog::Application.routes.draw do
   get "/users/:user_id/edit" => "users#edit"
   get "/users/:user_id/update" => "users#update"
 
-#Deals
-  get "/deals/index" => "deals#index"
-  get "/" => "deals#index"
-  get "/deals/" => "deals#category_list"
-
   #CREATE
   get "/deals/new" => "deals#new"
   get "/deals/create" => "deals#create"
 
   #READ
-  get "/deals" =>"deals#index"
+  get "/" =>"deals#index"
+  get "/deals/index" =>"deals#index"
+  get "/deals/" => "deals#category_list"
   get "/deals/:deal_id/show" => "deals#show"
 
   #UPDATE
