@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name ,:message =>"no data"
   validates_uniqueness_of :email
 
+  # before_create do |user|
+  #   user.email = user.
 
 end

@@ -13,8 +13,11 @@
     <label>Deal price:</label>
     <input type="integer" name="deal_price" class="form-control input-sm" placeholder="Deal price">
     <br>
-    <label>Product id: (iPad=1, Nexus 7=2, Others=3)</label>
-    <input type="integer" name="product_id" class="form-control input-sm" placeholder="Product id">
+    <label>Choose the category of your new hotdeal:</label>
+    <%= select_tag "category_id", options_for_select([['Tablet', 1], ['CellPhone', 2]]) %>
+    <br>
+    <label>Choose the product of your new hotdeal: </label>
+    <%= select_tag "product_id", options_for_select([['iPad', 1], ['Nexus7', 2], ['Galaxy3', 3]]) %>
     <br>
     <label>Image URL:</label>
     <input type="text" name="image_url" class="form-control input-sm" placeholder="Image_url">

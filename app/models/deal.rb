@@ -9,4 +9,6 @@ class Deal < ActiveRecord::Base
   validates_inclusion_of :original_price, :in=>0..10000
   validates_inclusion_of :deal_price, :in=>0..10000
 
+
+
 end

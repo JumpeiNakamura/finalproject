@@ -42,11 +42,14 @@ class DealsController < ApplicationController
     deal = Deal.new
     deal.name = params["name"]
     deal.description = params["description"]
+    deal.category_id = params["category_id"]
     deal.product_id = params["product_id"]
     # deal.likes = params["likes"]
     # deal.dislikes = params["dislikes"]
     deal.original_price = params["original_price"]
     deal.deal_price = params["deal_price"]
+    deal.image_url = params["image_url"]
+    deal.link = params["link"]
     deal.save
     redirect_to "/"
   end
