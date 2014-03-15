@@ -1,12 +1,9 @@
 Blog::Application.routes.draw do
 
-
-
   resources :locations
-
   resources :people
-
   get "googlemap/result"
+
 #Amazon API
   get "/amazon/index" => "amazon#index"
   # get "amazon/show" => "amazon#show"
@@ -29,7 +26,7 @@ Blog::Application.routes.draw do
   #READ
   get "/" =>"deals#index"
   get "/deals/index" =>"deals#index"
-  get "/deals" => "deals#category_list"
+  get "/deals/" => "deals#category_list"
   get "/deals/:deal_id/show" => "deals#show"
 
   #UPDATE
