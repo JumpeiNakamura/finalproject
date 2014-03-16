@@ -1,5 +1,5 @@
 <div class="page-header">
-  <%= link_to "Add a New Deals", "/deals/new", :class => "btn btn-md btn-success pull-right" %>
+  <%= link_to "Add a New Deals", "/deals/new", :class => "btn btn-md btn-warning pull-right" %>
   <h1>
 
     <h3>Displaying <%= @deal_list.count %> <%= params[:cat] %> deals.</h3>
@@ -8,13 +8,13 @@
 
 <div class="row">
                 <div class="col-md-1">
-                  <a> Photo </a>
+                  <h4><strong> Photo </strong></h4>
                 </div>
                 <div class="col-md-6">
-                  <a> Deals </a>
+                  <h4><strong> Deals </strong></h4>
                 </div>
                 <div class="col-md-3">
-                  <a> Posted Date </a>
+                  <h4><strong> Posted Date </strong></h4>
                 </div>
                 <div class="col-md-2">
                   <i class="fa fa-thumbs-up"></i> <i class="fa fa-thumbs-down"></i>
@@ -27,7 +27,7 @@
   <div class="row">
 
     <div class="col-md-1">
-      <a href="/deals/aaa/show">
+      <a href="/deals/<%= deal.id %>/show">
         <img width="50" src="<%= deal.image_url %>">
       </a>
     </div>
