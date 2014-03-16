@@ -1,2 +1,31 @@
-<h1>Deals#edit</h1>
-<p>Find me in app/views/deals/edit.html.erb</p>
+<div class="page-header">
+  <h1>Edit deal profile</h1>
+</div>
+
+<% deal = Deal.find_by(:id => params[:deal_id]) %>
+
+<form action="/deals/<%= @deal.id %>/update">
+  <div class="form-group">
+    <label>Change the deal Name:</label>
+    <input name="name" type="text" value="<%= deal.name %>" class="form-control input-sm" >
+  </div>
+  <div class="form-group">
+    <label>Change the deal Decription:</label>
+    <input name="description" type="text" value="<%= @deal.description %>" class="form-control input-md">
+  </div>
+  <div class="form-group">
+    <label>Change the Original Price:</label>
+    <input name="original_price" type="integer" value=<%= @deal.original_price %> class="form-control input-md">
+  </div>
+  <div class="form-group">
+    <label>Change the Deal Price:</label>
+    <input name="deal_price" type="integer" value=<%= @deal.deal_price %> class="form-control input-md">
+  </div>
+  <div class="form-group">
+    <label>Change the photo of the product:</label>
+    <input name="image_url" type="text" value=<%= @deal.image_url %> class="form-control input-md">
+  </div>
+  <button type="submit" class="btn btn-success btn-md">Done!</button>
+  or
+  <%= link_to "Cancel", "/" %>
+</form>

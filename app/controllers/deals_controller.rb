@@ -54,4 +54,19 @@ class DealsController < ApplicationController
     redirect_to "/"
   end
 
+  def edit
+    @deal = Deal.find_by(:id => params[:deal_id])
+  end
+
+  def update
+    deal = Deal.find_by(:id => params[:deal_id])
+    deal.name = params["name"]
+    deal.original_price = params["original_price"]
+    deal.deal_price = params["deal_price"]
+    deal.description = params["description"]
+    deal.image_url = params["image_url"]
+    deal.save
+    redirect_to "/"
+  end
+
 end
