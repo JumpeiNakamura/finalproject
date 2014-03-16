@@ -1,5 +1,7 @@
 Blog::Application.routes.draw do
 
+  get "deals/edit"
+  get "deal/edit"
   resources :locations
   resources :people
   get "googlemap/result"
